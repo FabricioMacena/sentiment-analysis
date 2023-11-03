@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/png">
+</head>
+<body>
+    <main>
+        <header>
+            <h2>Sentiment Analysis</h2>
+            <p>Type a tweet or even a sentence and then enter the language of the entered sentence. The program, through a model made for Natural Language Processing (NLP), will try to find out whether the text entered is a <strong class="strongPos">Positive</strong> or <strong class="strongNeg">Negative</strong> sentence.</p>
+        </header>
+        <form action="process" method="POST">
+            <textarea name="sentenceField" placeholder="Enter a sentence here (min 20 characters)"></textarea>
+
+            <select name="selectField" id="selectField">
+                <option value="en">English</option>
+                <option value="pt">Portuguese</option>
+                <option value="es">Spanish</option>
+                <option value="zh-CH">Mandarin</option>
+                <option value="ru">Russian</option>
+                <option value="hi">Hindi</option>
+            </select>
+
+            <input type="submit" value="Check">
+        </form>
+
+        {% if result: %}
+            <span class="{{ class_ }}">{{ result }}</span>
+        {% endif %}
+
+    </main>
+</body>
+</html>
