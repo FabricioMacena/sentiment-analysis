@@ -1,8 +1,10 @@
 FROM python:3.11.4
 
-WORKDIR /app/sentimentanalysis/
+WORKDIR /app/sentiment-analysis/
 
-COPY . /app/sentimentanalysis/
+COPY . /app/sentiment-analysis/
+
+RUN /bin/bash -c "source /app/sentimentanalysis/env/bin/activate"
 
 RUN pip install -r requirements.txt
 
