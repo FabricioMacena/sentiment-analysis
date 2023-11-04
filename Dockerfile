@@ -1,10 +1,10 @@
 FROM python:3.11.4
 
-WORKDIR /app/sentiment-analysis/
+WORKDIR /app/
 
-COPY . /app/sentiment-analysis/
+COPY . /app/
 
-RUN /bin/bash -c "source /app/sentimentanalysis/venv/Scripts/activate"
+RUN /venv/Scripts/activate
 
 RUN pip install -r requirements.txt
 
