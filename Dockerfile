@@ -1,12 +1,11 @@
+# Use a imagem Python 3.11.4 como base
 FROM python:3.11.4
 
 WORKDIR /app/
 
 COPY . /app/
 
-RUN /venv/Scripts/activate
-
-RUN pip install -r requirements.txt
+RUN /venv/bin/python -m pip install -r requirements.txt
 
 EXPOSE 5000
 
