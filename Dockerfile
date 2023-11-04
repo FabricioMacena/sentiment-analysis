@@ -4,7 +4,7 @@ WORKDIR /app/sentiment-analysis/
 
 COPY . /app/sentiment-analysis/
 
-RUN /bin/bash -c "source /app/sentimentanalysis/env/bin/activate"
+RUN /bin/bash -c "source /app/sentimentanalysis/venv/Scripts/activate"
 
 RUN pip install -r requirements.txt
 
